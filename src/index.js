@@ -103,3 +103,16 @@ $(function() {
 
     $(document).on('click', '.js-tab', onTabClick);
 });
+
+// open popup
+$(function() {
+
+    let openPopup = (e) => {
+        let $popup = $(e.currentTarget).attr('id');
+
+        $(`.js-popup[data-popup=${$popup}]`).addClass('opened');
+        $('.wrapper').addClass('popup-is-open')
+    }
+
+    $(document).on('click', '.js-popup-btn', openPopup);
+});

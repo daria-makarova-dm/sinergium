@@ -73,7 +73,7 @@
                                     <label><input type="radio" name="size" value="xxl" />XXL</label>
                                 </li>
                             </ul>
-                            <div class="size__help">
+                            <div id="size-popup" class="size__help js-popup-btn">
                                 Подобрать оптимальный размер
                             </div>
                         </div>
@@ -209,6 +209,59 @@
                     </div>
                 </div>
             </section>
+        </div>
+        <div class="popup js-popup" data-popup="size-popup">
+            <div class="popup__content">
+                <h2 class="popup__title">Подобрать оптимальный размер</h2>
+                <div class="popup__body">
+                    <div class="popup__parameters">
+                        <div class="popup__desc">
+                            Не уверены, какой размер подойдет именно вам?<br/>
+                            Просто укажите свой рост и вес и вы узнаете свой размер.
+                        </div>
+                        <div class="popup__size-selectors">
+                            <div class="popup__size-selector">
+                                <div class="popup__value">
+                                    <div class="popup__measure">Рост, см</div>
+                                    <input class="popup__value-input" id="height-input" type="number" value="190" />
+                                </div>
+                                <div class="popup__range">
+                                    <ul class="popup__range-values">
+                                        <li class="popup__range-value">145</li>
+                                        <li class="popup__range-value">155</li>
+                                        <li class="popup__range-value">165</li>
+                                        <li class="popup__range-value">175</li>
+                                        <li class="popup__range-value">185</li>
+                                        <li class="popup__range-value">195</li>
+                                    </ul>
+                                    <input class="popup__range-input" type="range" id="height-range" value="190">
+                                </div>
+                            </div>
+                            <div class="popup__size-selector">
+                                <div class="popup__value">
+                                    <div class="popup__measure">Вес, кг</div>
+                                    <input class="popup__value-input" id="weight" type="number" value="80" min="145" max="195" />
+                                </div>
+                                <div class="popup__range">
+                                    <ul class="popup__range-values">
+                                        <li class="popup__range-value">40</li>
+                                        <li class="popup__range-value">60</li>
+                                        <li class="popup__range-value">80</li>
+                                        <li class="popup__range-value">100</li>
+                                        <li class="popup__range-value">120</li>
+                                    </ul>
+                                    <input class="popup__range-input" type="range" id="weight-range" value="80" min="40" max="120" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup__result">
+                        <div class="popup__result-title">Ваш оптимальный размер:</div>
+                        <div class="popup__result-output">XXL</div>
+                    </div>
+                </div>
+                <button class="popup__submit-btn" type="button">выбрать этот размер</button>
+            </div>
         </div>
     </div>
 </body>
