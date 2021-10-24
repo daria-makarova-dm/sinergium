@@ -1,0 +1,57 @@
+.price
+    display: flex
+
+    &__value
+        margin-right: 32px
+
+        @media (max-width: $tablet-min)
+            margin-right: 0
+
+    &__old
+        font-size: 18px
+        font-weight: 700
+        color: $dark-grey
+        text-decoration: line-through
+
+    &__current
+        font-size: 40px
+        font-weight: 900
+        line-height: 1
+        letter-spacing: -1px
+        color: $dark-text
+        margin-bottom: 5px
+
+    &__saving
+        color: $dark-text
+        font-weight: 500
+
+        span
+            font-size: 18px
+            font-weight: 700
+            color: $torchRed
+
+    &__discount
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 82px
+        height: 100%
+        background-image: $discount-icon
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        font-size: 22px
+        font-weight: 900
+        color: white
+
+        &--mobile
+            display: none
+            width: 55px
+            height: 55px
+
+            @media (max-width: $tablet-min)
+                display: flex
+
+        &--desktop
+            @media (max-width: $tablet-min)
+                display: none

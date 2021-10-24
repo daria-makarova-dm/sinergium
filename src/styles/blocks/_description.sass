@@ -1,0 +1,82 @@
+.description
+    width: 100%
+
+    &__tabs
+        display: flex
+        border-bottom: 1px solid $very-light-grey
+        
+    &__tab
+        font-size: 26px
+        font-weight: 900
+        cursor: pointer
+
+        &:not(:last-child)
+            margin-right: 14px
+            
+        &.active
+            color: $dark-text
+            border: 1px solid $very-light-grey
+            border-bottom: none
+            border-radius: 15px 15px 0 0
+            box-shadow: 0 -3px 8px rgba( $dim-gray, 0.14 )
+            
+            .description__tab-wrapper
+                
+                background-color: white
+                
+
+    &__tab-wrapper
+        position: relative
+        top: 1px
+        width: 100%
+        height: 100%
+        padding: 7px 15px
+        border-radius: 15px 15px 0 0
+    &__content
+        position: relative
+        background-color: white
+
+    &__tab-content
+        display: none
+        padding: 6px 10px 5px 16px
+
+        &.active
+            display: block
+
+        p
+            font-size: 16px
+            line-height: 1.65
+            margin-bottom: 25px
+
+    &__list
+        padding-top: 9px
+
+    &__item
+        display: flex
+        justify-content: space-between
+        font-weight: 500
+        padding: 8px 0 7px 0
+
+        &:not(:last-child)
+            border-bottom: 1px dashed $very-light-grey 
+
+        & > div
+            width: 49%
+
+    &__item-value
+        color: $dark-text
+
+        &--color
+            display: flex
+
+    &__item-color
+        width: 20px
+        height: 20px
+        border-radius: 50%
+
+        &[style="background-color: white"]
+            border: 1px solid $very-light-grey
+
+        &:not(:last-child)
+            margin-right: 20px
+            

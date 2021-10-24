@@ -1,0 +1,156 @@
+.delivery
+    width:calc( 400 * 100% / 1095 )
+    margin-right: calc( 63 * 100% / 1095)
+    padding-top: 11px
+    flex-shrink: 0
+
+    @media (max-width: $tablet-min)
+        width: 100%
+        margin-right: 0
+
+    &__header
+        display: flex
+        margin-bottom: 22px
+
+        span
+            font-size: 18px
+            font-weight: 700
+
+    &__selector
+        position: relative
+
+    &__city
+        color: $dark-text
+        text-decoration: underline dotted
+        padding-left: 5px
+        cursor: pointer
+
+    &__city-list
+        display: none
+        position: absolute
+        width: max-content
+        max-width: 200px
+        top: calc( 100% + 10px )
+        left: 0
+        list-style: none
+        padding: 10px 15px
+        border-radius: 8px
+        border: 1px solid $very-light-grey
+        background-color: white
+
+    &__city-item
+        padding: 5px 0
+        cursor: pointer
+
+        &:hover
+            text-decoration: underline
+
+        &.chosen
+            color: $dark-text
+
+    &__table
+        font-weight: 500
+        margin-bottom: 25px
+
+    &__table-row
+        display: flex
+        justify-content: space-between
+        width: 100%
+        padding: 8px 0 7px
+
+        &:not(:last-child)
+            border-bottom: 1px dashed $main-text
+
+    &__table-option
+        width: 38%
+
+    &__table-days
+        width: 39%      
+
+    &__table-link
+        text-decoration: underline dotted
+
+        span
+            position: relative
+            display: inline-block
+            bottom: -2px
+            width: 12px
+            height: 12px
+            border: 1px solid $dark-text
+            background-image: $link-icon
+            background-position: center
+            background-size: 7px
+            background-repeat: no-repeat
+
+    &__table-price
+        color: $dark-text
+        width: 11%
+        text-align: end
+
+    &__icons
+        display: flex
+        justify-content: space-between
+        border-radius: 10px
+        border: 1px solid $whisper
+        padding: 25px 20px 28px
+        margin-bottom: 24px
+
+    &__icon
+        display: flex
+        color: $dark-text
+        font-weight: 700
+        
+
+        div
+            width: 33px
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+            margin-right: 23px
+
+        &--payment
+            div
+                background-image: $pocket-icon
+
+        &--return
+            div
+                background-image: $calendar-icon
+
+        span
+            max-width: 90px
+
+    &__feedback
+        display: flex
+
+    &__feedback-desc
+        font-size: 18px
+        font-weight: 700
+        margin-right: 20px
+
+    &__number
+        display: inline-block
+        margin-bottom: 6px
+        font-size: 25px
+        font-weight: 700
+        line-height: 1
+        letter-spacing: -0.3px
+
+    &__call
+        position: relative
+        display: inline-block
+        font-weight: 500
+        color: $orange-peel
+        padding-left: 20px
+
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+            width: 15px
+            height: 15px
+            background-image: $callback-icon
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center

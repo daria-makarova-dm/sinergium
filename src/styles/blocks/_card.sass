@@ -1,0 +1,22 @@
+.card
+    background-color: white
+    max-width: 1200px
+    margin: auto
+    border-radius: 20px
+    box-shadow: 0 0 79px rgba(0, 0, 0, 0.11)
+    padding: 30px 73px 42px 33px
+
+    @media (max-width: $tablet-min)
+        padding: 14px 15px
+
+    &__top,
+    &__body
+        display: flex
+
+        @media (max-width: $tablet-min)
+            flex-direction: column
+
+    &__top
+        margin-bottom: 32px
+
+        

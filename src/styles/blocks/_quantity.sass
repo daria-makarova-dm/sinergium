@@ -1,0 +1,72 @@
+.quantity
+    display: flex
+    justify-content: space-between
+    border-radius: 25px
+    background-color: $whisper
+    margin-bottom: 40px
+
+    &__selector
+        display: flex
+        padding: 10px
+
+    &__button
+        position: relative
+        width: 30px
+        height: 30px
+        background-color: white
+        border-radius: 50%
+        cursor: pointer
+
+        &::before
+            content: ''
+            width: 13px
+            height: 3px
+
+        &::before,
+        &::after
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            border-radius: 1.5px
+            background-color: $dark-text
+
+        &--plus
+            &::after
+                content: ''
+                width: 3px
+                height: 13px
+
+    &__input
+        font-size: 18px
+        font-weight: 900
+        color: $dark-text
+        width: 57px
+        border: none
+        background-color: transparent
+        text-align: center
+
+        &:focus
+            outline: none
+
+    &__submit
+        position: relative
+        font-size: 22px
+        font-weight: 900
+        color: white
+        border-radius: 25px
+        background-color: $torchRed
+        padding: 0 42px 0 65px
+        box-shadow: 0 5px 15px rgba($burgundy, 0.28)
+        cursor: pointer
+
+        &::before
+            content: ''
+            position: absolute
+            left: 34px
+            width: 20px
+            height: 30px
+            background-image: $purchase-icon
+            background-size: contain
+            background-position: center
+            background-repeat: no-repeat

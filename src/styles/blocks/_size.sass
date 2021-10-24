@@ -1,0 +1,97 @@
+.size
+    border-bottom: 1px solid $very-light-grey
+    padding-bottom: 17px
+    margin-bottom: 50px
+
+    &__title
+        position: relative
+        font-weight: 500
+
+        &::before
+            content: ''
+            position: absolute
+            top: 60%
+            left: 0
+            width: 100%
+            height: 1px
+            background-color: $very-light-grey
+
+        & span
+            position: relative
+            background-color: white
+            padding-right: 8px
+        
+    &__body
+        display: flex
+        justify-content: space-between
+
+    &__buttons
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        list-style: none
+        width: 100%
+        margin-right: 66px
+
+    &__button
+        position: relative
+        font-size: 12px
+        font-weight: 700
+        color: $dark-text
+        border-radius: 50%
+        border: 1px solid $very-light-grey
+        
+        min-width: 25px
+        min-height: 25px        
+
+        & label
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
+            padding: 4px 7px
+            cursor: pointer
+
+        & input
+            display: none
+
+        &.active
+            background-color: $accent-color
+            color: white
+            border: none
+
+        &.disabled
+            border-color: transparent
+            background-color: transparent
+            color: $main-text
+            
+
+            & label
+                cursor: default
+                text-decoration: line-through
+
+    &__help
+        position: relative
+        color: $dark-text
+        line-height: 1.2
+        text-decoration: underline dotted
+        cursor: pointer
+        padding-left: 57px
+        padding-top: 4px
+        max-width: 198px
+        flex-shrink: 0
+
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+            height: 100%
+            width: 100%
+            max-width: 40px
+            background-image: $size-icon
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
