@@ -7,14 +7,23 @@
     @media (max-width: $tablet-min)
         width: 100%
         margin-right: 0
+        padding-top: 13px
+        border-top: 1px dashed $very-light-grey
+        margin-bottom: 35px
 
     &__header
         display: flex
         margin-bottom: 22px
 
+        @media (max-width: $tablet-min)
+            margin-bottom: 6px
+
         span
             font-size: 18px
             font-weight: 700
+
+            @media (max-width: $tablet-min)
+                font-size: 14px
 
     &__selector
         position: relative
@@ -52,6 +61,10 @@
         font-weight: 500
         margin-bottom: 25px
 
+        @media (max-width: $tablet-min)
+            font-size: 12px
+            margin-bottom: 8px
+
     &__table-row
         display: flex
         justify-content: space-between
@@ -60,12 +73,19 @@
 
         &:not(:last-child)
             border-bottom: 1px dashed $main-text
+            padding: 8px 0 10px
 
     &__table-option
         width: 38%
 
+        @media (max-width: $tablet-min)
+            width: 41%
+
     &__table-days
-        width: 39%      
+        width: 39%
+
+        @media (max-width: $tablet-min) 
+            width: 35% 
 
     &__table-link
         text-decoration: underline dotted
@@ -95,11 +115,17 @@
         padding: 25px 20px 28px
         margin-bottom: 24px
 
+        @media (max-width: $tablet-min)
+            padding: 17px 14px 22px
+            margin-bottom: 14px
+
     &__icon
         display: flex
         color: $dark-text
         font-weight: 700
-        
+
+        @media (max-width: $tablet-min)
+            font-size: 12px    
 
         div
             width: 33px
@@ -107,6 +133,10 @@
             background-repeat: no-repeat
             background-position: center
             margin-right: 23px
+
+            @media (max-width: $tablet-min)
+                margin-right: 11px
+                flex-shrink: 0
 
         &--payment
             div
@@ -119,6 +149,9 @@
         span
             max-width: 90px
 
+            @media (max-width: $tablet-min)
+                width: max-content
+
     &__feedback
         display: flex
 
@@ -126,6 +159,17 @@
         font-size: 18px
         font-weight: 700
         margin-right: 20px
+
+        @media (max-width: $tablet-min)
+            font-size: 14px
+            flex-basis: 42%
+            margin-right: 0
+            line-height: 1.4
+
+    &__number-wrapper
+        @media (max-width: $tablet-min)
+            width: fit-content
+            flex-basis: 58%
 
     &__number
         display: inline-block
@@ -135,12 +179,19 @@
         line-height: 1
         letter-spacing: -0.3px
 
+        @media (max-width: $tablet-min)
+            font-size: 20px
+            margin-bottom: 9px
+
     &__call
         position: relative
         display: inline-block
         font-weight: 500
         color: $orange-peel
         padding-left: 20px
+
+        @media (max-width: $tablet-min)
+            font-size: 12px
 
         &::before
             content: ''
@@ -154,3 +205,6 @@
             background-size: contain
             background-repeat: no-repeat
             background-position: center
+
+            @media (max-width: $tablet-min)
+                top: 8px

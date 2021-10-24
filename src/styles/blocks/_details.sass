@@ -2,10 +2,17 @@
     padding-top: 8px
     width: 100%
 
+    @media (max-width: $tablet-min)
+        border-top: 1px dashed $very-light-grey
+        padding-top: 15px
+
     &__header
         display: flex
         justify-content: space-between
         margin-bottom: 38px
+
+        @media (max-width: $tablet-min)
+            margin-bottom: 7px
 
     &__info
         display: flex
@@ -14,14 +21,31 @@
         justify-content: space-between
         padding-top: 6px
 
+        @media (max-width: $tablet-min)
+            padding-top: 0
+            flex-direction: column
+            align-items: flex-start
+            justify-content: flex-start
+            flex-shrink: 0
+            padding-right: 12px
+
+    &__lower-price
+        @media (max-width: $tablet-min)
+            font-size: 12px
+            display: flex
+            flex-direction: column
+
     &__lower-price-link
         color: $dark-text
-        text-decoration: underline dotted
+        text-decoration: underline dashed
 
     &__store
         position: relative
         font-size: 12px
         padding-left: 25px
+
+        @media (max-width: $tablet-min)
+            margin-bottom: 11px
 
         &::before
             content: ''

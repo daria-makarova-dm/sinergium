@@ -5,9 +5,15 @@
     background-color: $whisper
     margin-bottom: 40px
 
+    @media (max-width: $tablet-min)
+        margin-bottom: 25px
+
     &__selector
         display: flex
         padding: 10px
+
+        @media (max-width: $tablet-min)
+            padding: 6px 7px 4px 8px
 
     &__button
         position: relative
@@ -46,6 +52,10 @@
         background-color: transparent
         text-align: center
 
+        @media (max-width: $tablet-min)
+            width: 47px
+            padding-bottom: 6px
+
         &:focus
             outline: none
 
@@ -60,6 +70,10 @@
         box-shadow: 0 5px 15px rgba($burgundy, 0.28)
         cursor: pointer
 
+        @media (max-width: $tablet-min)
+            font-size: 18px
+            padding: 0 12px 6px 38px
+
         &::before
             content: ''
             position: absolute
@@ -70,3 +84,6 @@
             background-size: contain
             background-position: center
             background-repeat: no-repeat
+
+            @media (max-width: $tablet-min)
+                left: 14px

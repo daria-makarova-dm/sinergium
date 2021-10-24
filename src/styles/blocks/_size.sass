@@ -3,6 +3,10 @@
     padding-bottom: 17px
     margin-bottom: 50px
 
+    @media (max-width: $tablet-min)
+        padding-bottom: 13px
+        margin-bottom: 29px
+
     &__title
         position: relative
         font-weight: 500
@@ -20,10 +24,17 @@
             position: relative
             background-color: white
             padding-right: 8px
+
+            @media (max-width: $tablet-min)
+                font-size: 12px
         
     &__body
         display: flex
         justify-content: space-between
+
+        @media (max-width: $tablet-min)
+            flex-direction: column
+            padding-top: 12px
 
     &__buttons
         display: flex
@@ -32,6 +43,10 @@
         list-style: none
         width: 100%
         margin-right: 66px
+
+        @media (max-width: $tablet-min)
+            margin-right: 0
+            margin-bottom: 11px
 
     &__button
         position: relative
@@ -81,6 +96,11 @@
         padding-top: 4px
         max-width: 198px
         flex-shrink: 0
+
+        @media (max-width: $tablet-min)
+            font-size: 12px
+            padding-left: 52px
+            max-width: 180px
 
         &::before
             content: ''
