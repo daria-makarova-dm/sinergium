@@ -270,3 +270,25 @@ $(function() {
     $(document).on('click', '.js-popup-submit', setSizeValue);
     $(document).on('click', '.js-close-popup', closePopup);
 });
+
+//copy article
+$(function () {
+    let copyArticle = (e) => {
+        let $value = $(e.currentTarget).val();
+        navigator.clipboard.writeText($value)
+            .then(() => {
+                navigator.clipboard.readText()
+                    .then(text => {
+                        alert(text);
+                    })
+                    .catch(err => {
+                        console.log('Something went wrong', err);
+                    });
+            })
+            .catch(err => {
+                console.log('Something went wrong', err);
+            });
+    }
+
+    $(document).on('click', '#article', copyArticle);
+});
