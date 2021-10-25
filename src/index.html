@@ -58,7 +58,7 @@
                         <div class="size__body">
                             <ul class="size__buttons">
                                 <li class="size__button js-size-button active">
-                                    <label><input type="radio" name="size" value="s" />S</label>
+                                    <label><input type="radio" name="size" value="s" checked />S</label>
                                 </li>
                                 <li class="size__button js-size-button">
                                     <label><input type="radio" name="size" value="m" />M</label>
@@ -81,7 +81,7 @@
                     <div class="quantity">
                         <div class="quantity__selector">
                             <div class="quantity__button quantity__button--minus js-minus"></div>
-                            <input class="quantity__input js-quantity" type="number" name="quantity" value="1" readonly />
+                            <input class="quantity__input js-quantity" type="text" name="quantity" value="1" readonly />
                             <div class="quantity__button quantity__button--plus js-plus"></div>
                         </div>
                         <button class="quantity__submit" type="submit">В корзину</button>
@@ -212,55 +212,61 @@
         </div>
         <div class="popup js-popup" data-popup="size-popup">
             <div class="popup__content">
-                <h2 class="popup__title">Подобрать оптимальный размер</h2>
-                <div class="popup__body">
-                    <div class="popup__parameters">
-                        <div class="popup__desc">
-                            Не уверены, какой размер подойдет именно вам?<br/>
-                            Просто укажите свой рост и вес и вы узнаете свой размер.
-                        </div>
-                        <div class="popup__size-selectors">
-                            <div class="popup__size-selector">
-                                <div class="popup__value">
-                                    <div class="popup__measure">Рост, см</div>
-                                    <input class="popup__value-input" id="height-input" type="number" value="190" />
+                <div class="popup__content-wrapper">
+                    <h2 class="popup__title">Подобрать оптимальный размер</h2>
+                    <div class="popup__body">
+                        <div class="popup__parameters">
+                            <div class="popup__desc">
+                                Не уверены, какой размер подойдет именно вам?<br />
+                                Просто укажите свой рост и вес и вы узнаете свой размер.
+                            </div>
+                            <div class="popup__size-selectors">
+                                <div class="popup__size-selector">
+                                    <div class="popup__value">
+                                        <div class="popup__measure">Рост, см</div>
+                                        <input class="popup__value-input js-range-output" id="height" data-value="height-range" type="text" value="190" />
+                                    </div>
+                                    <div class="popup__range">
+                                        <ul class="popup__range-values">
+                                            <li class="popup__range-value">145</li>
+                                            <li class="popup__range-value">155</li>
+                                            <li class="popup__range-value">165</li>
+                                            <li class="popup__range-value">175</li>
+                                            <li class="popup__range-value">185</li>
+                                            <li class="popup__range-value">195</li>
+                                        </ul>
+                                        <input class="popup__range-input js-range" type="range" id="height-range" value="190"
+                                            min="145" max="195">
+                                    </div>
                                 </div>
-                                <div class="popup__range">
-                                    <ul class="popup__range-values">
-                                        <li class="popup__range-value">145</li>
-                                        <li class="popup__range-value">155</li>
-                                        <li class="popup__range-value">165</li>
-                                        <li class="popup__range-value">175</li>
-                                        <li class="popup__range-value">185</li>
-                                        <li class="popup__range-value">195</li>
-                                    </ul>
-                                    <input class="popup__range-input" type="range" id="height-range" value="190">
+                                <div class="popup__size-selector">
+                                    <div class="popup__value">
+                                        <div class="popup__measure">Вес, кг</div>
+                                        <input class="popup__value-input js-range-output" id="weight" data-value="weight-range" type="text" value="80" />
+                                    </div>
+                                    <div class="popup__range">
+                                        <ul class="popup__range-values">
+                                            <li class="popup__range-value">40</li>
+                                            <li class="popup__range-value">60</li>
+                                            <li class="popup__range-value">80</li>
+                                            <li class="popup__range-value">100</li>
+                                            <li class="popup__range-value">120</li>
+                                        </ul>
+                                        <input class="popup__range-input js-range" type="range" id="weight-range" value="80"
+                                            min="40" max="120" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="popup__size-selector">
-                                <div class="popup__value">
-                                    <div class="popup__measure">Вес, кг</div>
-                                    <input class="popup__value-input" id="weight" type="number" value="80" min="145" max="195" />
-                                </div>
-                                <div class="popup__range">
-                                    <ul class="popup__range-values">
-                                        <li class="popup__range-value">40</li>
-                                        <li class="popup__range-value">60</li>
-                                        <li class="popup__range-value">80</li>
-                                        <li class="popup__range-value">100</li>
-                                        <li class="popup__range-value">120</li>
-                                    </ul>
-                                    <input class="popup__range-input" type="range" id="weight-range" value="80" min="40" max="120" />
-                                </div>
-                            </div>
                         </div>
-                    </div>
-                    <div class="popup__result">
-                        <div class="popup__result-title">Ваш оптимальный размер:</div>
-                        <div class="popup__result-output">XXL</div>
+                        <div class="popup__result">
+                            <div class="popup__result-title">Ваш оптимальный размер:</div>
+                            <div class="popup__result-output js-size-result">xxl</div>
+                        </div>
                     </div>
                 </div>
-                <button class="popup__submit-btn" type="button">выбрать этот размер</button>
+        
+                <button class="popup__submit-btn js-popup-submit" type="button">Выбрать этот размер</button>
+                <button class="popup__close-btn js-close-popup" type="button"></button>
             </div>
         </div>
     </div>

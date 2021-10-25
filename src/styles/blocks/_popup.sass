@@ -14,11 +14,19 @@
         display: flex
 
     &__content
+        position: relative
+        width: 100%
         background-color: white
         border-radius: 20px
-        padding: 5px calc( 101 * 100% / 1920 )
         box-shadow: 0 3px 79px rgba(0, 0, 0, 0.11)
         max-width: 790px
+
+    &__content-wrapper
+        padding: 5px calc( 62 * 100% / 790 ) 40px calc( 101 * 100% / 790 )
+        border-bottom: 1px solid $very-light-grey
+
+        @media (max-width: $tablet)
+            padding: 15px
 
     &__title
         font-size: 26px
@@ -26,42 +34,74 @@
         color: $dark-text
         margin-bottom: 28px
 
+        @media (max-width: $tablet)
+            font-size: 16px
+            margin-bottom: 14px
+
     &__body
         display: flex
 
+        @media (max-width: $tablet)
+            flex-direction: column
+
+    &__parameters
+        width: 100%
+        margin-right: 43px
+
+        @media (max-width: $tablet)
+            margin-right: 0
+            margin-bottom: 15px
+
     &__desc
         line-height: 1.4
-        margin-bottom: 27px
+        margin-bottom: 28px
 
     &__size-selector
         display: flex
+        align-items: flex-end
+
+        &:not(:last-child)
+            margin-bottom: 26px            
 
     &__value
         display: flex
         flex-direction: column
+        margin-right: 25px
 
     &__measure
         color: $dark-text
         font-weight: 500
-        padding: 0 0 5px 10px
+        padding: 0 0 5px 8px
+
+        @media (max-width: $tablet)
+            padding: 0
 
     &__value-input
-        font-size: 26px
+        font-size: 24px
         font-weight: 700
-        width: 80px
+        width: 78px
         height: 50px
         border-radius: 25px
         border: 1px solid $very-light-grey
         text-align: center
 
+        @media (max-width: $tablet)
+            font-size: 16px
+            width: 50px
+            height: 30px
+
     &__range
-        width: 100%
+        width: 291px
+
+        @media (max-width: $tablet)
+            width: 100%
 
     &__range-values
         display: flex
         justify-content: space-between
-        width: 100%
+        width: calc(100% + 18px)
         margin-bottom: 6px
+        margin: 0 -7px 6px -7px
 
     &__range-value
         position: relative
@@ -82,16 +122,102 @@
 
     &__range-input
         width: 100%
-        background-color: $accent-color
+        height: 10px
+        border-radius: 5px
         -webkit-appearance: none
+        background: linear-gradient(to right, $accent-color 0%, $accent-color 50%, $whisper 50%, $whisper 100%)
 
         &::-webkit-slider-thumb
             -webkit-appearance: none
-            border: 1px solid #000000
-            height: 36px
-            width: 16px
-            border-radius: 3px
-            background: #ffffff
+            height: 25px
+            width: 25px
+            border-radius: 50%
+            background: $dark-text
             cursor: pointer
-            margin-top: -14px
-            box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d
+            box-shadow: 0px 4px 7px rgba($dark-text, 0.54)()
+
+    &__result
+        @media (max-width: $tablet)
+            display: flex
+            align-items: center
+
+    &__result-title
+        font-size: 16px
+        font-weight: 500
+        text-align: center
+        color: $dark-text
+        margin-bottom: 24px
+
+        @media (max-width: $tablet)
+            margin-bottom: 0
+            margin-right: 10px
+
+    &__result-output
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 188px
+        height: 188px
+        border-radius: 50%
+        border: 1px solid $accent-color
+        font-size: 61px
+        font-weight: 900
+        color: white
+        background-color: white
+        background-image: $circle-icon
+        background-size: 88%
+        background-repeat: no-repeat
+        background-position: center
+        text-transform: uppercase
+
+        @media (max-width: $tablet)
+            width: 60px
+            height: 60px
+            font-size: 20px
+        
+    &__submit-btn
+        display: block
+        font-size: 22px
+        font-weight: 900
+        color: white
+        border-radius: 25px
+        background-color: $torchRed
+        box-shadow: 0 5px 15px rgba($burgundy, 0.28)
+        padding: 8px 39px 14px 42px
+        margin: 32px auto 45px
+        cursor: pointer
+
+    &__close-btn
+        position: absolute
+        top: 0
+        right: 0
+        transform: translate(40%, -41%)
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        background-color: white
+        background-image: radial-gradient($torchRed 0, $torchRed 50%, transparent 52%, transparent 100%)
+        box-shadow: 0 5px 15px rgba($burgundy, 0.28)
+        padding: 0
+        cursor: pointer
+
+        @media (max-width: $tablet)
+            transform: translate(-10%, 7%)
+
+        &::after,
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            width: 2px
+            height: 13px
+            background-color: white
+
+        &::after
+            transform: translate(-50%, -50%) rotate(45deg)
+
+        &::before
+            transform: translate(-50%, -50%) rotate(-45deg)
+
+
