@@ -1,3 +1,5 @@
+<?php
+require('functions.php'); ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -30,19 +32,19 @@
                     <div class="details__header">
                         <div class="price">
                             <div class="price__value">
-                                <div class="price__old">3 700 ₽</div>
-                                <div class="price__current">2 290 ₽</div>
+                                <div class="price__old"><?php echo $oldPriceFormatted;?> ₽</div>
+                                <div class="price__current"><?php echo $newPriceFormatted;?> ₽</div>
                                 <div class="price__saving-wrapper">
-                                    <div class="price__saving"><span>1 100 ₽</span> экономии</div>
-                                    <div class="price__discount price__discount--mobile">-23%</div>
+                                    <div class="price__saving"><span><?php echo $priceDifference;?> ₽</span> экономии</div>
+                                    <div class="price__discount price__discount--mobile"><?php echo $discount;?>%</div>
                                 </div>
                             </div>
-                            <div class="price__discount price__discount--desktop">-23%</div>
+                            <div class="price__discount price__discount--desktop"><?php echo $discount;?>%</div>
                         </div>
                         <div class="details__info">
                             <div class="article">
                                 <span class="article__title">Код товара:</span>
-                                <input class="article__output" type="text" name="article" value="15112" size="5" readonly />
+                                <input class="article__output" id="article" type="text" name="article" value="<?php echo $article; ?>" size="5" readonly />
                             </div>
                             <div class="details__store">На складе много</div>
                             <div class="details__lower-price">
@@ -81,7 +83,7 @@
                     <div class="quantity">
                         <div class="quantity__selector">
                             <div class="quantity__button quantity__button--minus js-minus"></div>
-                            <input class="quantity__input js-quantity" type="text" name="quantity" value="1" readonly />
+                            <input class="quantity__input js-quantity" id="quantity" type="text" name="quantity" value="1" readonly />
                             <div class="quantity__button quantity__button--plus js-plus"></div>
                         </div>
                         <button class="quantity__submit" type="submit">В корзину</button>

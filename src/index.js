@@ -54,6 +54,29 @@ $(function() {
     $(document).on('click', '.js-plus', onPlusClick);
 });
 
+// submit form
+$(function() {
+    let submit = (e) => {
+        e.preventDefault();
+        let $article = $('#article').val();
+        let $size =  $('input[name=size]:checked').val();
+        let $quantity = $('#quantity').val();
+
+        $.ajax({
+            url: 'server.php?article=' + $article + '&size=' + $size + '&quantity=' + $quantity,
+            type: 'get',
+            dataType: 'html',
+            success: function(data) {
+                console.log(data);
+            }
+        });
+
+        console.log($article, $size, $quantity);
+    }
+
+    $(document).on('click', '.js-submit-form', submit);
+});
+
 Inputmask("(999) 999-99-99").mask($('.js-telephone-mask'));
 
 // choose delivery city

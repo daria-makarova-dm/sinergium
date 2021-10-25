@@ -4,7 +4,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const autoprefixer = require('autoprefixer');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -51,7 +51,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './index.php',
+            filename: 'index.php',
             minify: {
                 collapseWhitespace: isProd
             }
@@ -59,12 +60,24 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: filename('css')
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/functions.php'),
+                    to: path.resolve(__dirname, 'dist')
+                },
+                {
+                    from: path.resolve(__dirname, 'src/server.php'),
+                    to: path.resolve(__dirname, 'dist')
+                }
+            ],
         })
     ],
     module: {
         rules: [
             {
-                test: /\.(html)$/,
+                test: /\.(php)$/,
                 use: {
                     loader: 'html-loader',
                     options: {
