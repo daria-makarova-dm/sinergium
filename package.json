@@ -21,6 +21,8 @@
     "html-webpack-plugin": "^5.4.0",
     "mini-css-extract-plugin": "^2.4.2",
     "node-sass": "^6.0.1",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^6.2.0",
     "sass-loader": "^12.2.0",
     "terser-webpack-plugin": "^5.2.4",
     "webpack": "^5.59.1",
@@ -28,7 +30,11 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
+    "autoprefixer": "^10.3.7",
     "inputmask": "^5.0.6",
     "jquery": "^3.6.0"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

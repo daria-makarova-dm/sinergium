@@ -4,6 +4,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const autoprefixer = require('autoprefixer');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -82,7 +83,19 @@ module.exports = {
                         options: {
                             esModule: false
                         }
-                    }
+                    }, 
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                              plugins: [
+                                [
+                                  "autoprefixer"
+                                ],
+                              ],
+                            },
+                          }
+                    },
                 ]
             },
             {
@@ -96,6 +109,18 @@ module.exports = {
                         options: {
                             esModule: false
                         }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                              plugins: [
+                                [
+                                  "autoprefixer"
+                                ],
+                              ],
+                            },
+                          }
                     },
                     'sass-loader'
                 ]
