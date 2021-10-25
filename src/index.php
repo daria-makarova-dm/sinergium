@@ -86,7 +86,7 @@ require('functions.php'); ?>
                             <input class="quantity__input js-quantity" id="quantity" type="text" name="quantity" value="1" readonly />
                             <div class="quantity__button quantity__button--plus js-plus"></div>
                         </div>
-                        <button class="quantity__submit" type="submit">В корзину</button>
+                        <button class="quantity__submit js-submit-form" type="submit">В корзину</button>
                     </div>
                     <div class="order">
                         <div class="order__title">Быстрый заказ</div>
